@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Citas Médicas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <h1>Sistema de Citas Médicas</h1>
+
+  <!-- ========================================================= -->
+  <!-- 🔹 PACIENTES -->
+  <!-- ========================================================= -->
+  <section id="pacientes">
+    <h2>Pacientes</h2>
+
+    <form id="formPaciente">
+      <input type="hidden" id="pacienteId">
+
+      <input type="text" id="pacienteNombre" placeholder="Nombre del paciente">
+      <input type="email" id="pacienteEmail" placeholder="Correo electrónico">
+      <input type="text" id="pacienteTelefono" placeholder="Teléfono">
+
+      <button type="submit">Guardar Paciente</button>
+    </form>
+
+    <table id="tablaPacientes">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Teléfono</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <hr>
+
+  <!-- ========================================================= -->
+  <!-- 🔹 DOCTORES -->
+  <!-- ========================================================= -->
+  <section id="doctores">
+    <h2>Doctores</h2>
+
+    <form id="formDoctor">
+      <input type="hidden" id="doctorId">
+
+      <input type="text" id="doctorNombre" placeholder="Nombre del doctor">
+      <input type="text" id="doctorEspecialidad" placeholder="Especialidad">
+
+      <button type="submit">Guardar Doctor</button>
+    </form>
+
+    <table id="tablaDoctores">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Especialidad</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <hr>
+
+  <!-- ========================================================= -->
+  <!-- 🔹 CITAS -->
+  <!-- ========================================================= -->
+  <section id="citas">
+    <h2>Agendar Cita</h2>
+
+    <form id="formCita">
+      <select id="citaPaciente">
+        <option value="">Seleccione paciente</option>
+      </select>
+
+      <select id="citaDoctor">
+        <option value="">Seleccione doctor</option>
+      </select>
+
+      <input type="date" id="citaFecha">
+
+      <!-- 🔸 Nuevos campos -->
+      <input type="time" id="citaHoraInicio" placeholder="Hora inicio">
+      <input type="time" id="citaHoraFin" placeholder="Hora fin">
+
+      <button type="submit">Agendar Cita</button>
+    </form>
+
+    <h3>Citas Programadas</h3>
+
+    <table id="tablaCitas">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Paciente</th>
+          <th>Doctor</th>
+          <th>Fecha</th>
+          <th>Hora Inicio</th>
+          <th>Hora Fin</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <!-- Contenedor para alertas -->
+  <div id="alertContainer"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

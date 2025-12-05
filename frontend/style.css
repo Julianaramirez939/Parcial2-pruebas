@@ -1,0 +1,199 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background: #f7f9fc;
+  padding: 20px;
+  color: #1f2937;
+}
+
+h1 {
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 28px;
+  color: #1f2937;
+}
+
+h2 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #374151;
+}
+
+section {
+  margin-bottom: 40px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+}
+
+/* Formulario general */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+  align-items: center;
+}
+
+form input,
+form select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  min-width: 180px;
+  background: #f9fafb;
+  transition: all 0.2s ease;
+}
+
+form input:focus,
+form select:focus {
+  border-color: #2563eb;
+  outline: none;
+  background: #fff;
+}
+
+/* Botones */
+button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #2563eb;
+  color: #fff;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+button.danger {
+  background: #dc2626;
+}
+
+button.danger:hover {
+  background: #b91c1c;
+}
+
+button.secondary {
+  background: #6b7280;
+}
+
+button.secondary:hover {
+  background: #4b5563;
+}
+
+/* Tablas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+th,
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+  text-align: left;
+  background: #f3f4f6;
+  color: #374151;
+  font-weight: 600;
+}
+
+td {
+  background: #ffffff;
+}
+
+tr:hover td {
+  background: #f9fafb;
+}
+
+.acciones {
+  display: flex;
+  gap: 8px;
+}
+
+/* Alertas */
+#alertContainer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+}
+
+.alert {
+  padding: 15px 20px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  min-width: 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: translateX(50px);
+  animation: slideIn 0.4s forwards;
+}
+
+.alert.success {
+  background: #28a745;
+}
+
+.alert.error {
+  background: #dc3545;
+}
+
+.alert.warning {
+  background: #ffc107;
+  color: #333;
+}
+
+/* Animaciones */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+}
+
+/* Confirmación */
+.alert.confirm {
+  background: #fbbf24;
+  color: #1f2937;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 300px;
+}
+
+.alert.confirm .confirm-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.alert.confirm button {
+  padding: 6px 12px;
+  font-size: 14px;
+}
